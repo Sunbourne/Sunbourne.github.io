@@ -23,17 +23,15 @@ h1 {
   color: #666;
   text-transform: uppercase;
   font-weight: 500;
+  font-size: 1.6em;
   margin-top:1.8em;
-
   line-height: 1.2em;
+  transition: all ease-in-out 0.4s;
 }
 
-sandbox-post p {
-  width: 80%;
+h1:hover { color: #333;}
 
-}
-
-ul {padding: 0 0.5em 0 0;}
+sandbox-post p { width: 80%;}
 
 li {
   list-style: none;
@@ -48,15 +46,13 @@ header {margin: 1.2em 0 4em 0;}
 /* LOGO */
 
 #logo-container{
-  width: 35%;
+  width: 34%;
   float: left;
-  top: -0.2em;
-  position: relative;
 }
 
 #logo {
   width: 100%;
-  vertical-align: text-top;
+  vertical-align: middle;
   opacity: 0.7;
   transition: all ease-in-out 0.4s;
 }
@@ -68,16 +64,17 @@ header {margin: 1.2em 0 4em 0;}
 #main-menu{
   float: right;
   text-transform: capitalize;
-}
+  }
 
 #main-menu ul li{
   display: inline-block;
   margin-left: 1em;
+
 }
 
 #main-menu ul li a:after {
   padding-bottom: 0.25em;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid #666;
   display: block;
   content: "";
   width: 0%;
@@ -86,7 +83,7 @@ header {margin: 1.2em 0 4em 0;}
 }
 
 #main-menu ul li a:hover:after {
-  border-bottom: 2px solid #666;
+  border-bottom: 2px solid #333;
   display: block;
   content: "";
   width: 100%;
@@ -95,6 +92,7 @@ header {margin: 1.2em 0 4em 0;}
 
 #main-menu ul li a{
   color:#666;
+  vertical-align: middle;
   transition: all ease-in-out 0.4s;
 
 }
@@ -111,21 +109,42 @@ header {margin: 1.2em 0 4em 0;}
   display: block;
 }
 
-img {max-width: 100%;margin: 0;padding: 0;}
-
-#gallery:after{
-  content: "";
-  clear: both;
-  display: block
-}
 
 /* HOME */
 
-.gallery-image-wrapper {
-  width: 50%;
-  float: left;
-  overflow: hidden;
+img {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+.gallery-image-wrapper {
+  float: left;
+  width: 48.9%;
+  height: 340px;
+  overflow: hidden;
+  background-color: #000;
+  margin-left: 10px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.gallery-image{
+  min-height: 340px;
+  transition: all linear 0.4s;
+}
+
+.gallery-image:hover{ opacity: 0.6; }
+
+.gallery-caption {
+  color: #efefef;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
 
 .gallery-image-container:after {
   content: "";
@@ -133,8 +152,10 @@ img {max-width: 100%;margin: 0;padding: 0;}
   display: block;
 }
 
-.gallery-image {
-  width: 120%;
+#gallery:after{
+  content: "";
+  clear: both;
+  display: block
 }
 
 /* CONTACT */
@@ -166,16 +187,57 @@ img {max-width: 100%;margin: 0;padding: 0;}
 }
 
 .sandbox-post-image-wrapper {
-  max-height: 692px;
+  max-height: 680px;
+  background-color: #333;
   overflow: hidden;
 }
 
-.sandbox-post-image { min-width: 100%;}
+.sandbox-post-image {
+  width: 100%;
+  transition: all ease-in-out 0.4s;
+}
+
+.sandbox-post-image:hover {opacity: 0.6;}
+
+/* SANBOX PROJECT */
+
+.sandbox-project p {
+  max-width: 700px;
+}
+
+.sandbox-project-image-wrapper {
+  max-height: 680px;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+.sandbox-project-image {
+  width: 100%;
+  transition: all ease-in-out 0.4s;
+}
 
 /* ABOUT */
 #body-text p {
   max-width: 750px;
 }
+
+/* SINGLE PROJECT */
+
+.project p {
+  max-width: 720px;
+}
+
+.project-image-wrapper {
+  max-height: 680px;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.project-image { width: 100%;}
+
+
+/* PROJECT PROJECT */
+
 
 /*----FOOTER----*/
 
@@ -259,12 +321,13 @@ img {max-width: 100%;margin: 0;padding: 0;}
     text-align: center;
     width: 100%;
     margin: 2em auto;
+    padding: 0;
   }
 
   .gallery-image-wrapper {
     width: 100%;
+    margin-left:0;
   }
-
 }
 
 
@@ -306,6 +369,7 @@ img {max-width: 100%;margin: 0;padding: 0;}
   }
 
   #main-menu ul li a{
+    display: inline-block;
     font-size: 1.2em;
     line-height: 2em;
   }
@@ -360,12 +424,13 @@ img {max-width: 100%;margin: 0;padding: 0;}
     transform: rotate(-45deg);
     top: -8px;
   }
-
-  .gallery-image {
-    width: 100%;
-    padding-top: 0.5em;
+  
+  .gallery-image-wrapper {
+    height: auto;
   }
-
+  
+  .gallery-image { min-height: 0;display: block;}
+  
   .info { text-align: center;}
 
   #socials-menu a {padding: 0.5em}
