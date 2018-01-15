@@ -38,6 +38,7 @@ li {
 }
 a {  text-decoration:none ;}
 
+a:active {outline: none;}
 
 /*------HEADER-------*/
 
@@ -90,6 +91,17 @@ header {margin: 1.2em 0 4em 0;}
   opacity: 1;
 }
 
+#main-menu ul li.current a:after {
+  border-bottom: 2px solid #333;
+  display: block;
+  content: "";
+  width: 100%;
+  opacity: 1;
+  transition: none;
+}
+
+#main-menu ul li a.current { color: #333;}
+
 #main-menu ul li a{
   color:#666;
   vertical-align: middle;
@@ -121,7 +133,7 @@ img {
 .gallery-image-wrapper {
   float: left;
   width: 48.9%;
-  height: 340px;
+  /*! height: 340px; */
   overflow: hidden;
   background-color: #000;
   margin-left: 10px;
@@ -131,20 +143,33 @@ img {
 
 .gallery-image{
   min-height: 340px;
+  display: block;
+  width: 100%;
   transition: all linear 0.4s;
+  /*! filter: grayscale(50%); */
 }
 
-.gallery-image:hover{ opacity: 0.6; }
+.gallery-image:hover{ 
+  opacity: 0.6; 
+  filter: grayscale(50%);
+}
 
 .gallery-caption {
   color: #efefef;
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: -100px;
+  left: 30px;
   text-transform: uppercase;
+  font-size: 120%;
   z-index: 1;
+  opacity: 0;
+  transition: all ease-in-out 0.6s;
 }
 
+a:hover .gallery-caption { 
+  bottom: 10px;
+  opacity: 1;
+}
 
 .gallery-image-container:after {
   content: "";
@@ -187,14 +212,14 @@ img {
 }
 
 .sandbox-post-image-wrapper {
-  max-height: 680px;
   background-color: #333;
   overflow: hidden;
 }
 
 .sandbox-post-image {
   width: 100%;
-  transition: all ease-in-out 0.4s;
+  display: block;
+  transition: all ease-in-out 0.4s;  
 }
 
 .sandbox-post-image:hover {opacity: 0.6;}
@@ -206,14 +231,14 @@ img {
 }
 
 .sandbox-project-image-wrapper {
-  max-height: 680px;
-  padding-bottom: 20px;
+  padding-bottom: 2%;
   overflow: hidden;
 }
 
 .sandbox-project-image {
   width: 100%;
-  transition: all ease-in-out 0.4s;
+  display: block;
+  transition: all ease-in-out 0.4s;  
 }
 
 /* ABOUT */
@@ -228,12 +253,11 @@ img {
 }
 
 .project-image-wrapper {
-  max-height: 680px;
   overflow: hidden;
-  padding-bottom: 20px;
+  padding-bottom: 2.5%;
 }
 
-.project-image { width: 100%;}
+.project-image { width: 100%;display: block;}
 
 
 /* PROJECT PROJECT */
@@ -323,7 +347,11 @@ img {
     margin: 2em auto;
     padding: 0;
   }
-
+  
+  #main-menu ul li {
+    display: inline-block;
+    margin:0 1em;
+}
   .gallery-image-wrapper {
     width: 100%;
     margin-left:0;
@@ -430,6 +458,14 @@ img {
   }
   
   .gallery-image { min-height: 0;display: block;}
+  
+  .gallery-caption {
+    width: 100%;
+    left: 0;
+    margin: 4% auto;
+    display: block;
+    text-align: center;
+   }
   
   .info { text-align: center;}
 
