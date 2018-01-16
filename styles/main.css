@@ -164,19 +164,23 @@ img {
   font-size: 120%;
   font-weight: 500;
   opacity: 0;
+  z-index: 1;
+  pointer-events: none;
   transition: all ease-in-out 0.6s;
   font-weight: 500;
 }
 
 a:hover .gallery-caption {
   bottom: 10px;
-  opacity: 1;
+  opacity: 0.9;
+  
 }
 
 .gallery-image-container:after {
   content: "";
   clear: both;
   display: block;
+  
 }
 
 #gallery:after{
@@ -458,6 +462,7 @@ a:hover .gallery-caption {
     margin: 4% auto;
     display: block;
     text-align: center;
+    z-index: 1;
    }
 
   .info { text-align: center;}
