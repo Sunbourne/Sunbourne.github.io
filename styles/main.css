@@ -1,7 +1,7 @@
-@import url ('styles/reset.css');
+@import url ('reset.css');
 
 html{
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 body {
@@ -36,9 +36,11 @@ sandbox-post p { width: 80%;}
 li {
   list-style: none;
 }
-a {  text-decoration:none ;}
 
-a:active {outline: none;}
+a {
+  text-decoration:none ;
+  outline: none;
+}
 
 /*------HEADER-------*/
 
@@ -173,14 +175,14 @@ img {
 a:hover .gallery-caption {
   bottom: 10px;
   opacity: 0.9;
-  
+
 }
 
 .gallery-image-container:after {
   content: "";
   clear: both;
   display: block;
-  
+
 }
 
 #gallery:after{
