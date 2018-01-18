@@ -134,12 +134,12 @@ img {
 
 .gallery-image-container {
   column-count: 2;
-  column-gap: 10px;
+  column-gap: 20px;
 }
 
 .gallery-image-wrapper {
   background-color: #000;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   position: relative;
   overflow: hidden;
 }
@@ -375,7 +375,7 @@ a:hover .gallery-caption {
 
   #logo-container{
     float: none;
-    width: 70%;
+    width: 50%;
     margin: 0 auto;
   }
 
